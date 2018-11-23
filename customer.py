@@ -7,13 +7,21 @@ class Customer(object):
     def full_name(self):
         return self.first_name + " " + self.family_name
 
+    def entry_fee(self):
+        if self.age < 20:
+            return 1000
+        elif 20 <=self.age  and self.age < 65:
+            return 1500
+        else:
+            return 1200
+
 
 if __name__ == '__main__':
     ken = Customer(first_name="Ken", family_name="Tanaka", age=15)
-    ken.age  # 15 という値を返す
+    ken.entry_fee()  # 1000 という値を返す
 
     tom = Customer(first_name="Tom", family_name="Ford", age=57)
-    tom.age  # 57 という値を返す
+    tom.entry_fee()  # 1500 という値を返す
 
     ieyasu = Customer(first_name="Ieyasu", family_name="Tokugawa", age=73)
-    ieyasu.age  # 73 という値を返す
+    ieyasu.entry_fee()  # 1200 という値を返す
